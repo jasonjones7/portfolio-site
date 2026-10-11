@@ -1,0 +1,60 @@
+/* True Image Zoom — overlay styles */
+
+#tiz-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: zoom-out;
+}
+
+#tiz-scroll-area {
+    overflow: auto;       /* enables scrolling when image is larger than viewport */
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: default;
+    padding: 48px 16px 16px; /* top padding leaves room for close button */
+    box-sizing: border-box;
+}
+
+#tiz-img {
+    /* Show at native resolution — no max-width / max-height constraints */
+    display: block;
+    flex-shrink: 0;
+    margin: auto;         /* centres the image when it's smaller than the viewport */
+    cursor: default;
+    image-rendering: auto;
+    background: transparent;
+}
+
+#tiz-close {
+    position: fixed;
+    top: 10px;
+    right: 16px;
+    z-index: 1000000;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.6);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+#tiz-close:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Clickable images get a subtle zoom cursor */
+.tiz-zoomable {
+    cursor: zoom-in !important;
+}

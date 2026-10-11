@@ -1,0 +1,59 @@
+/* Portfolio Landing — scoped under .jj-portfolio so it won't fight your theme / Bootstrap */
+.jj-portfolio { background:white; font-family:'Hanken Grotesk',sans-serif; }
+.jj-portfolio *, .jj-portfolio *::before, .jj-portfolio *::after { box-sizing:border-box; }
+.jj-portfolio a { color:#16130f; text-decoration:none; }
+.jj-portfolio a:hover { color:#E54CA7; }
+
+.jj-hero { display:grid; grid-template-columns:1fr 1fr; height:min(72vh,640px); min-height:520px; }
+
+.jj-marquee-col { display:flex; flex-direction:column; justify-content:center; gap:12px; overflow:hidden; border-right:1px solid rgba(22,19,15,0.08); padding:0 44px; }
+.jj-name { font-family:'Newsreader',serif; font-weight:500; font-size:96px; line-height:0.98; letter-spacing:-0.02em; color:#16130f; margin:0; text-align:left !important; }
+.jj-role { font-family:'Newsreader',serif; font-style:italic; font-weight:500; font-size:56px; line-height:1.02; letter-spacing:-0.01em; color:#E54CA7; margin:0; }
+
+.jj-mrow { overflow:hidden; margin:0 -44px; padding-top:14px; }
+.jj-mtrack { display:flex; width:max-content; white-space:nowrap; }
+.jj-mtrack span { padding-right:36px; }
+.jj-m3 { animation:jjmqL 36s linear infinite; font-family:'Space Mono',monospace; font-size:16px; letter-spacing:0.18em; color:#24C9AE; padding-left:44px; }
+
+.jj-photo { position:relative; }
+.jj-photo canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
+.jj-photo .jj-hint { position:absolute; bottom:20px; right:24px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.14em; color:rgba(244,242,236,0.85); mix-blend-mode:difference; }
+
+.jj-index-label { padding:22px 56px 8px; font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.14em; color:#6f6a60; }
+.jj-row { display:grid; grid-template-columns:64px 1fr 220px 40px; align-items:center; gap:20px; padding:20px 56px; border-top:1px solid rgba(22,19,15,0.08); }
+.jj-row .jj-num { font-family:'Space Mono',monospace; font-size:13px; color:#E54CA7; }
+.jj-row .jj-name-cell {
+  font-family:'Newsreader',serif; font-weight:500; font-size:30px; letter-spacing:-0.01em;
+  /* Two-tone gradient (orange | dark) sized 2x wide; slide it on hover for a left-to-right color wipe. */
+  background:linear-gradient(to right, #E54CA7 50%, #16130f 50%);
+  background-size:200% 100%;
+  background-position:100% 0;            /* rest state shows the dark half */
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  transition:background-position .5s cubic-bezier(.22,.61,.36,1);
+}
+.jj-row:hover .jj-name-cell,
+.jj-row:focus-visible .jj-name-cell { background-position:0 0; }  /* orange sweeps in from the left */
+.jj-row .jj-tag { font-family:'Space Mono',monospace; font-size:14px; color:#6f6a60; }
+.jj-row .jj-arrow { font-family:'Space Mono',monospace; font-size:18px; color:#16130f; text-align:right; }
+
+.m-scroll__title a {
+    font-family: 'Newsreader', serif;
+    font-size:6rem;
+    text-transform:uppercase;
+}
+
+@keyframes jjmqL { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+@media (max-width:860px) {
+  .jj-hero { grid-template-columns:1fr; height:auto; }
+  .jj-marquee-col { border-right:none; border-bottom:1px solid rgba(22,19,15,0.08); padding:44px 24px; }
+  .jj-mrow { margin:0 -24px; }
+  .jj-m3 { padding-left:24px; }
+  .jj-name { font-size:52px; }
+  .jj-role { font-size:30px; }
+  .jj-photo { height:70vw; min-height:320px; }
+  .jj-row { grid-template-columns:44px 1fr 40px; padding:18px 24px; }
+  .jj-row .jj-tag { display:none; }
+  .jj-index-label { padding:20px 24px 8px; }
+}

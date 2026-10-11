@@ -1,0 +1,23 @@
+# Ignore everything by default (WordPress core, wp-config.php, Local files),
+# then opt back in to the code we actually develop.
+/*
+!.gitignore
+!README.md
+
+# wp-content: track themes, plugins and mu-plugins only
+!/wp-content/
+/wp-content/*
+!/wp-content/themes/
+!/wp-content/plugins/
+!/wp-content/mu-plugins/
+
+# Host- and environment-specific files that should never be committed
+/wp-content/plugins/hello.php
+/wp-content/themes/twenty*/
+*.log
+*.sql
+*.sql.gz
+.DS_Store
+Thumbs.db
+node_modules/
+.env
